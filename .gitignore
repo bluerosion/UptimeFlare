@@ -38,6 +38,7 @@ next-env.d.ts
 terraform.tfstate*
 
 /.wrangler
+backup_data.json
 
 # agent
 .agent
