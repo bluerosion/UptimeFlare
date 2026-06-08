@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { Tooltip, Drawer, Badge } from '@mantine/core'
 import { IconCloud, IconAlertTriangle, IconCalendar, IconClock } from '@tabler/icons-react'
 import { MonitorTarget, MonitorState } from '@/types/config'
 import { useTranslation } from 'react-i18next'
-import Image from 'next/image'
 import { Stack, Text } from '@mantine/core'
 import { useState } from 'react'
 import { maintenances } from '@/uptime.config'
@@ -260,10 +260,10 @@ export default function MonitorCard({
                 rel="noopener noreferrer"
                 className="block w-full h-full"
               >
-                <Image
+                <img
                   src={monitor.preview}
                   alt={monitor.name}
-                  fill
+                  loading="lazy"
                   className="w-full h-full object-cover object-top origin-top transition-transform duration-700 group-hover:scale-150"
                 />
               </a>
@@ -319,9 +319,7 @@ export default function MonitorCard({
             <span>30d check</span>
             <span>{totalPercent}% uptime</span>
           </div>
-          <div className="flex items-end justify-between gap-[3px] h-6 opacity-80">
-            {uptimeBars}
-          </div>
+          <div className="flex items-end justify-between gap-0.75 h-6 opacity-80">{uptimeBars}</div>
         </div>
 
         {/* Footer */}
